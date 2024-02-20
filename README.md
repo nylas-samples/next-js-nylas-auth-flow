@@ -1,5 +1,5 @@
 # next-js-nylas-auth-flow
-This sample repo will show you how to easily do X with Nylas.
+This sample repo will show you how to easily complete nylas auth flow in a next js application.
 
 ## Setup
 
@@ -12,9 +12,10 @@ This sample repo will show you how to easily do X with Nylas.
 You'll need the following values from the Nylas Dashboard:
 
 ```text
-ACCESS_TOKEN = ""
-CLIENT_ID = ""
-CLIENT_SECRET = ""
+NYLAS_API_URI=""
+NYLAS_API_KEY=""
+NYLAS_CLIENT_ID=""
+NYLAS_REDIRECT_URI=""
 ```
 
 Add the above values to a `.env` file.
