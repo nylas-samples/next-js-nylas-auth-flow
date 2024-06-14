@@ -9,16 +9,12 @@ const nylas = new Nylas({
 export const dynamic = 'force-dynamic' // defaults to auto
 
 export async function GET(request: Request) {
-  const cookieStore = cookies()
-
-  const data = nylas.auth.urlForOAuth2PKCE({
+  const authUrl = nylas.auth.urlForOAuth2({
     clientId: process.env.NYLAS_CLIENT_ID,
     provider: 'google',
     redirectUri: process.env.NYLAS_REDIRECT_URI,
     loginHint: 'user-email-to-connect',
   })
 
-  cookieStore.set('nylas_code_challenge', data.secretHash)
-
-  return Response.redirect(data.url)
+  return Response.redirect(authUrl)
 }
